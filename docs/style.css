@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'Beleren Bold';
+    src: url('./res/BELEREN-BOLD_P1.01.TTF');
+}
+@font-face {
+    font-family: 'Beleren Bold Small Caps';
+    src: url('./res/BELERENSMALLCAPS-BOLD.TTF');
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+    background-image: url('res/bg_tex.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100vh;
+    background-attachment: fixed;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    btn {
+        padding: 0.5rem 0.3rem;
+        a {
+            border-radius: 0.35rem;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            span {
+                margin-left: 0.2rem;
+            }
+            @media screen and (max-width: 523px) {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+    header {
+        text-wrap: nowrap;
+        overflow-y: hidden;
+        width: 100vw;
+        font-family: 'Beleren Bold';
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        position: sticky;
+        padding: 0.5rem;
+        background-color: #1b1b1baa;
+        min-height: 40px;
+        top: 0;
+        z-index: 1000;
+        .r_align {
+            display: flex;
+            margin-left: auto;
+            padding-right: 2rem;
+        }
+        
+        @media screen and (max-width: 523px) {
+            .r_align {
+                margin-left: 0;
+            }
+        }
+        btn:hover {
+            a {
+                background-color: #4a4a4a;
+            }
+        }
+        .r_align_on_mobile {
+            display: flex;
+            align-items: center;
+        }
+        @media screen and (max-width: 523px) {
+            .r_align_on_mobile {
+                margin-left: auto;
+                display: flex;
+            }
+        }
+    }
+    
+    .btn_home {
+        padding-left: 0rem;
+        a {
+            font-family: 'Beleren Bold Small Caps';
+            font-size: 16pt;
+            background-color: #00000000;
+        }
+    }
+    .btn_home:hover {
+        a {
+            color: white;
+            background-color: #00000000;
+        }
+    }
+    main {
+        scrollbar-width: none;
+        max-width: 100%;
+        overflow-x:hidden;
+        z-index: 1;
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        flex-grow: 1;
+        text-align: center;
+        margin: 0;
+        padding: 5 10px;
+        div {
+            padding-top: 1rem;
+        }
+        .score {
+            margin-top: 6rem;
+            font-size: 32pt;
+            font-family: 'Beleren Bold';
+            a {
+                background-color: #1b1b1b;
+                padding: 1rem 2rem;
+                outline: 3px solid #4a4a4a;
+            }
+        }
+        .sign_in_prompt {
+        }
+        .btn_open_pack {
+            button {
+                margin-bottom: 8rem;
+                border-radius: 12px;
+                font-size: 22pt;
+                outline: rgb(182, 90, 4) 2px solid;
+                box-shadow: 0 0 20px 5px rgba(155, 81, 12, 0.5);
+                background-color: #1b1b1b;
+                color: #acacac;
+                padding: 1rem 2rem;
+                font-family: 'Beleren';
+                border-style: none;
+                transform: scale(1);
+                transition: box-shadow 0.1s ease-out, color 0.1s ease-out, transform 0.3s ease-out;
+            }
+            button:hover {
+                color: white;
+                box-shadow: 0 0 20px 5px rgba(155, 81, 12, 1.85);
+                transform: scale(1.015);
+            }
+        }
+        .booster_pack_img {
+            position: absolute;
+            bottom: 0;
+        }
+        .opened_pack {
+            position: relative;
+            display:none;
+            align-items: start;
+            background-color: #1b1b1b;
+            padding: 1rem 2rem;
+            .opened_cards {
+                display:flex;
+                flex-direction: column;
+                padding-bottom: 18rem;
+                .playing_card {
+                    margin-bottom: -18rem;
+                    border-radius: 13px;
+                }
+            }
+            .badges {
+                margin-left: 2rem;
+                span {
+                    font-family: 'Beleren Bold Small Caps';
+                }
+                display:flex;
+                flex-direction: column;
+                .badge {
+                    
+                    background-color: #1b1b1b;
+                    margin: 0.2rem;
+                    border-radius: 12px;
+                    border-width: 0.3rem;
+                    border-style: solid;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                    padding: 0.5rem 1rem;
+                    .badge_title {
+                        color: #ffffff;
+                        display: flex;
+                        padding: 0.1rem;
+                        span {
+                            margin: 0.1rem 1rem;
+                            .title_rank {
+                                border-radius: 12px;
+                                border-width: 1rem;
+                                border-style: solid;
+                                padding: 0.1rem 1rem;
+                            }
+                        }
+                    }
+                    .badge_description {
+                        color: #7c7c7c;
+                    }
+                }
+            }
+        }
+        
+    }
+    footer {
+        width: 100vw;
+        background-color: #1b1b1b;
+        padding: 10px 10px;
+        position: absolute;
+        top: 100vh;
+
+        color: #4a4a4a;
+        font-family: 'Calibri'
+    }
+}
